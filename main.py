@@ -27,15 +27,15 @@ answers = [
 
 
 
-def askQuestions():
+def askQuestions(questionList,answerList):
     score = 0
     cntr = 0
     ua=""
     correct = None
-    for x in questions:
+    for x in questionList:
             print(x)
             ua = input("Answer: ")
-            if (ua==answers[cntr]):
+            if (ua==answerList[cntr]):
                 print("Correct!!")
                 correct = True
                 score+=1
@@ -43,9 +43,9 @@ def askQuestions():
                 print("Wrong!!")
                 correct = False
             cntr+=1
-    print(f"Score {score}/11")
+    print(f"Score {score}/{len(answerList)}")
 
 
      
 
-askQuestions()
+askQuestions(questions,answers)
