@@ -1,3 +1,4 @@
+#Both of us ->
 questions = [
 "What is the name of the tallest mountain in the world?",
 "Which country has the largest population in the world?",
@@ -25,27 +26,22 @@ answers = [
 "Canada"      
 ]
 
-
-
-def askQuestions(questionList,answerList):
+# Nare->
+def question (qList,aList):
+    counter = 0
     score = 0
-    cntr = 0
-    ua=""
-    correct = None
-    for x in questionList:
-            print(x)
-            ua = input("Answer: ")
-            if (ua==answerList[cntr]):
-                print("Correct!!")
-                correct = True
-                score+=1
-            else:
-                print("Wrong!!")
-                correct = False
-            cntr+=1
-    print(f"Score {score}/{len(answerList)}")
+    for i in qList: 
+           ui = input(f"{i}: ")
+           compareStrings(ui,aList[counter],score)   
+           counter+=1
+    print(f"You got {score}/{len(aList)}")
 
-
-     
-
-askQuestions(questions,answers)
+#Uri->
+def compareStrings(str1,str2,scr):
+      if str1.lower() == str2.lower():
+           print("Your answer is correct!!")
+           scr+=1
+      else:
+            print("Your answer is wrong!!")
+    
+question (questions,answers)
