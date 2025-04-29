@@ -1,4 +1,3 @@
-#Done by My Partner->
 questions = [
 "What is the name of the tallest mountain in the world?",
 "Which country has the largest population in the world?",
@@ -12,7 +11,7 @@ questions = [
 "What is the name of the smallest country in the world?",
 "What country has the most natural lakes?"
 ]
-#Done By Me->
+
 answers = [
 "Mount Everest",
 "China",
@@ -28,7 +27,7 @@ answers = [
 ]
 counter=0
 
-#Done By My Partner->
+
 def quiz (ques, ans):
       global counter
       score=0
@@ -38,7 +37,7 @@ def quiz (ques, ans):
             counter+=1
       print(f"Your score is {score}/11 ")  
 
-#Done By Me->
+
 def compareStrings(str1,str2,scr):
       finished = False
       while not finished:
