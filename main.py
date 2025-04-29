@@ -1,4 +1,4 @@
-#Both of us ->
+#Done by My Partner->
 questions = [
 "What is the name of the tallest mountain in the world?",
 "Which country has the largest population in the world?",
@@ -12,6 +12,7 @@ questions = [
 "What is the name of the smallest country in the world?",
 "What country has the most natural lakes?"
 ]
+#Done By Me->
 answers = [
 "Mount Everest",
 "China",
@@ -21,27 +22,33 @@ answers = [
 "Russia",
 "Alaska",
 "The Pacific Ocean",
-"Egypt",
+"Egypt",    
 "The Vatican City",
 "Canada"      
 ]
+counter=0
 
-# Nare->
-def question (qList,aList):
-    counter = 0
-    score = 0
-    for i in qList: 
-           ui = input(f"{i}: ")
-           compareStrings(ui,aList[counter],score)   
-           counter+=1
-    print(f"You got {score}/{len(aList)}")
+#Done By My Partner->
+def quiz (ques, ans):
+      global counter
+      score=0
+      for x in ques:
+            userinput = input(f"{x}(user input - type the answer): ") #The user inputs an answer to the question
+            score = compareStrings(userinput, ans[counter], score)
+            counter+=1
+      print(f"Your score is {score}/11 ")  
 
-#Uri->
+#Done By Me->
 def compareStrings(str1,str2,scr):
-      if str1.lower() == str2.lower():
-           print("Your answer is correct!!")
-           scr+=1
-      else:
-            print("Your answer is wrong!!")
-    
-question (questions,answers)
+      finished = False
+      while not finished:
+            global counter
+            if str1.lower() == str2.lower():
+                  print("Your answer is correct!!")
+                  scr+=1
+            else:
+                  print(f"Your answer is wrong!! The correct answer was {answers[counter]}")
+            finished = True if scr < 11 else False
+      return scr
+quiz(questions,answers)
+
